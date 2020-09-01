@@ -10,6 +10,7 @@ const multer = require("multer");
 app.set('view engine', 'ejs');
 const upload = multer();
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(upload.array());
 app.use(express.static("public"));
 
 mongoose.connect("mongodb+srv://admin-gramm:admin123@cluster0.2wsrn.mongodb.net/todolistDB?retryWrites=true&w=majority/todolistDB", {useUnifiedTopology: true, useNewUrlParser: true, useFindAndModify: false })
